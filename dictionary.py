@@ -1,4 +1,4 @@
-import re
+import re, secrets
 
 def convertToPercent(numerator, total):
 	return str( round(numerator / total*100, 1) ) + "%"
@@ -30,6 +30,9 @@ def getMatches(word_input, letters_guessed):
 		if re.search(regex, word):
 			matches.append(word)
 	return matches
+
+def getRandomWord():
+	return secrets.choice(words)
 
 
 w10 = open("scowl/final/english-words.10", 'r', encoding="latin-1")

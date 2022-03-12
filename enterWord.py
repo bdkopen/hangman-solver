@@ -12,11 +12,11 @@ def enterWord():
 		word_input = input("Enter word: ")
 
 		if(word_input == last_input):
-			draw(bad_guesses)
+			bad_guesses += 1
 			if(bad_guesses > 5):
+				draw(bad_guesses)
 				print("You beat the computer!")
 				return
-			bad_guesses += 1
 
 
 		matches = getMatches(word_input, letters_guessed)
@@ -37,3 +37,4 @@ def enterWord():
 			return;
 
 		last_input = word_input;
+		draw(bad_guesses)

@@ -4,14 +4,15 @@ from dictionary import *
 #Keep looping the command inputs.
 def solveProblem():
 
+	tried_input = "";
 	wordSolved = 0
 	while (not wordSolved):
 
 		#Request word input
 		print("Enter the currently known letters and use \".\" if the letter is unknown.")
 		word_input = input("Enter word: ")
-		print("Enter letters that you have tried without spaces. Press enter if no letters listed.")
-		tried_input = input("Tried letters: ")
+		#print("Enter letters that you have tried without spaces. Press enter if no letters listed.")
+		#tried_input = input("Tried letters: ")
 
 		matches = getMatches(word_input, tried_input)
 
@@ -19,6 +20,7 @@ def solveProblem():
 			print("Too many possible results to guess.")
 			outputTuple = getLetterProbability(word_input, matches)
 			print("The next most likely letter is an \"" + outputTuple[0] + "\" with a chance of " + outputTuple[1] + "%")
+			tried_input += outputTuple[0];
 		elif(len(matches) == 1):
 			print("The word is " + matches[0])
 			wordSolved = 1

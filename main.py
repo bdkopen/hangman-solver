@@ -1,5 +1,6 @@
 from solver import solveProblem
 from enterWord import enterWord
+from guessWord import guessWord
 
 def displayMenu():
 	print("===========")
@@ -20,7 +21,7 @@ while(1):
 	menu_input = input("Enter selection: ")
 	if(menu_input == "1"):
 		print("\nGuess The Word Selected")
-		guessTheWord()
+		guessWord()
 
 	elif(menu_input == "2"):
 		print("\nEnter The Word Selected")
@@ -31,4 +32,4 @@ while(1):
 		solveProblem()
 
 	else:
-		print("Invalid input - Try again.\n")
+		print("\nInvalid input - Try again.\n")
